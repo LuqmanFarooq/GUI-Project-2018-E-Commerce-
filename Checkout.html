@@ -2,13 +2,15 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="style.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <style>
-body {
-  font-family: Arial;
-  font-size: 17px;
-  padding: 8px;
+.head {
+float:left;
 }
+
 
 * {
   box-sizing: border-box;
@@ -51,6 +53,20 @@ body {
 }
 
 input[type=text] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+input[type=email] {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+input[type=number] {
   width: 100%;
   margin-bottom: 20px;
   padding: 12px;
@@ -110,13 +126,42 @@ span.price {
 </style>
 </head>
 <body>
-
+<div class="head"><img src="images/main site/velocity sports.png"></img></div>
+	
+	<div class="head2"><img src="images/main site/Football-Grunge-PPT-Backgrounds.jpg" height=" 200px" width="1203.22px"></img></div>
+	<div id="nav">
+			<div id="nav_wrapper">
+				<ul>
+					<li><a href="index.html"> Home </a> </li>
+					<li> <a href="men.html">Mens</a>
+						<ul>
+							<li><a href="menbottoms.html"> Bottoms </a> </li>
+							<li><a href="menhoodiesSweatshirts.html"> Hoodies / Sweatshirts </a> </li> 
+							<li><a href="menjackets.html"> Jackets </a> </li>
+							<li><a href="mentshirts.html"> T-Shirts </a> </li>
+							<li><a href="mentracksuits.html"> Tracksuits </a> </li>
+							<li><a href="mentrainers.html"> Trainers </a> </li>
+						</ul>
+					</li>
+					<li> <a href="womens.html"> Womens </a>
+						<ul>
+							<li> <a href="womenbottoms.html"> Bottoms </a> </li> 
+							<li> <a href="womenhoodiesSweatshirts.html"> Hoodies / Sweatshirts</a> </li>
+							<li> <a href="womenjackets.html"> Jackets </a> </li>
+							<li> <a href="womentshirts.html"> T-Shirts </a> </li>
+							<li> <a href="womentracksuits.html"> Tracksuits </a> </li>
+							<li> <a href="womentrainers.html"> Trainers </a> </li>
+						</ul>
+					</li>
+				</ul>
+			</div>	<!-- Nav wrapper end -->
+		</div><br>	<!-- Nav end -->
 <h2>Velovity Sports Checkout</h2>
 
 <div class="row">
   <div class="col-75">
     <div class="container">
-      <form action="/action_page.php">
+      <form id="contactForm" action="data.txt" >
       
         <div class="row">
           <div class="col-50">
@@ -124,7 +169,7 @@ span.price {
             <label for="fname"><i class="fa fa-user"></i> Full Name</label>
             <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
             <label for="email"><i class="fa fa-envelope"></i> Email</label>
-            <input type="text" id="email" name="email" placeholder="john@example.com">
+            <input type="email" id="userEmail" name="email" placeholder="john@example.com" >
             <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
             <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
             <label for="city"><i class="fa fa-institution"></i> City</label>
@@ -154,7 +199,7 @@ span.price {
             <label for="cname">Name on Card</label>
             <input type="text" id="cname" name="cardname" placeholder="John More Doe">
             <label for="ccnum">Credit card number</label>
-            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+            <input type="number" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
             <label for="expmonth">Exp Month</label>
             <input type="text" id="expmonth" name="expmonth" placeholder="September">
             <div class="row">
@@ -173,22 +218,129 @@ span.price {
         <label>
           <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
         </label>
-        <input type="submit" value="Continue to checkout" class="btn">
+        <input type="submit" value="Continue to checkout" class="btn" onclick="store()">
       </form>
     </div>
   </div>
   <div class="col-25">
     <div class="container">
-      <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b>4</b></span></h4>
-      <p><a href="#">Product 1</a> <span class="price">$15</span></p>
-      <p><a href="#">Product 2</a> <span class="price">$5</span></p>
-      <p><a href="#">Product 3</a> <span class="price">$8</span></p>
-      <p><a href="#">Product 4</a> <span class="price">$2</span></p>
+      <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i></span></h4>
       <hr>
-      <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
+	  <h3 id="itemforPurchase"></h3>
+	  <input type="text" id="discountCoupon" placeholder="Enter Discount Coupon Veloxxxx">
+	  <h3 id="disc"></h3>
+	  <button class="btn btn-primary" onclick="codevalid()">Get Discount</button>
+	  <button class="btn btn-primary" onclick="sessionStorage.clear(),location.reload()">Reset Cart</button>
     </div>
   </div>
 </div>
-
+	<div id="ftr">&copy; Copyright 2018 Velocity Sports |
+		<a href="#top">BackToTop</a> </div>
 </body>
+<script>
+//index page
+var tapoutBlackHoodyQty = Number(sessionStorage.tapoutBlackHoody);
+var adidasBlackWhiteQty = Number(sessionStorage.adidasBlackWhite);
+var leeCooperButterflyQty = Number(sessionStorage.leeCooperButterfly);
+var nikeBlackWhiteQty = Number(sessionStorage.nikeBlackWhite);
+var noFearBlackQty = Number(sessionStorage.noFearBlack);
+var adidasWhiteBlueNavyTrackQty = Number(sessionStorage.adidasWhiteBlueNavyTrack);
+var karrimorPurpleQty = Number(sessionStorage.karrimorPurple);
+var tapoutBlueQty = Number(sessionStorage.tapoutBlue);
+var nikeAirMaxSilverQty = Number(sessionStorage.nikeAirMaxSilver);
+var tapoutWhiteTopQty = Number(sessionStorage.tapoutWhiteTop);
+var nikeBlackPinkQty = Number(sessionStorage.nikeBlackPink);
+var pumaFlowerQty = Number(sessionStorage.pumaFlower);
+//men jackets
+var menJacketsQty = Number(sessionStorage.menJacketsQuantity);
+//men tracksuits
+var menTrackSuitsQty = Number(sessionStorage.menTrackSuitsQuantity);
+//men trainers
+var menTrainersQty = Number(sessionStorage.menTrainersQuantity);
+//men shirts
+var menShirtsQty = Number(sessionStorage.menShirtsQuantity);
+//men bottoms
+var menBottomsQty = Number(sessionStorage.menBottomsQuantity);
+//men hoodies
+var menHoodiesQty = Number(sessionStorage.menHoodiesQuantity);
+//women bottoms
+var womensBottomsQty = Number(sessionStorage.womenBottomsQuantity);
+//women jackets
+var womensJacketsQty = Number(sessionStorage.womenJacketsQuantity);
+//women tracksuits
+var womensTrackSuitsQty = Number(sessionStorage.womenTracksuitsQuantity);
+//women trainers
+var womensTrainersQty = Number(sessionStorage.womenTrainersQuantity);
+//women shirts
+var womensShirtsQty = Number(sessionStorage.womenShirtsQuantity);
+//women hoodies
+var womensHoodiesQty = Number(sessionStorage.womenHoddiesQuantity);
+//Total
+document.getElementById("itemforPurchase").innerHTML = "Total : &euro;" + parseFloat((tapoutBlackHoodyQty * 60.00)+(adidasBlackWhiteQty * 49.99)+(leeCooperButterflyQty * 60.00)+(nikeBlackWhiteQty * 60.00)+(noFearBlackQty * 60.00)+(adidasWhiteBlueNavyTrackQty * 130.00)+(karrimorPurpleQty * 60.00)+(tapoutBlueQty * 130.00)+(nikeAirMaxSilverQty * 80.00)+(tapoutWhiteTopQty * 25.00)+(nikeBlackPinkQty * 80.00)+(pumaFlowerQty * 25.00)+(womensBottomsQty * 60.00)+(menJacketsQty * 80.00)+(menTrackSuitsQty * 130.00)+(menTrainersQty * 80.00)+(menShirtsQty * 25.00)+(menBottomsQty * 50.00)+(menHoodiesQty * 60.00)+(womensJacketsQty * 100.00)+(womensTrackSuitsQty * 130.00)+(womensTrainersQty * 80.00)+(womensShirtsQty * 30.00)+(womensHoodiesQty * 60.00)).toFixed(2);
+
+
+localStorage.setItem('discountcode', 'Velo6689');
+
+function codevalid(){
+var givenCode =  document.getElementById("discountCoupon").value;
+if(givenCode==localStorage.discountcode){
+document.getElementById("disc").innerHTML = "After Discount : &euro;" + parseFloat(((tapoutBlackHoodyQty * 60.00)+(adidasBlackWhiteQty * 49.99)+(leeCooperButterflyQty * 60.00)+(nikeBlackWhiteQty * 60.00)+(noFearBlackQty * 60.00)+(adidasWhiteBlueNavyTrackQty * 130.00)+(karrimorPurpleQty * 60.00)+(tapoutBlueQty * 130.00)+(nikeAirMaxSilverQty * 80.00)+(tapoutWhiteTopQty * 25.00)+(nikeBlackPinkQty * 80.00)+(pumaFlowerQty * 25.00)+(womensBottomsQty * 60.00)+(menJacketsQty * 80.00)+(menTrackSuitsQty * 130.00)+(menTrainersQty * 80.00)+(menShirtsQty * 25.00)+(menBottomsQty * 50.00)+(menHoodiesQty * 60.00)+(womensJacketsQty * 100.00)+(womensTrackSuitsQty * 130.00)+(womensTrainersQty * 80.00)+(womensShirtsQty * 30.00)+(womensHoodiesQty * 60.00))-10).toFixed(2);
+}
+else 
+alert("enter valid code");
+}
+
+
+(function($) {
+$.fn.donetyping = function(callback){
+    var _this = $(this);
+    var x_timer;    
+    _this.keyup(function (){
+        clearTimeout(x_timer);
+        x_timer = setTimeout(clear_timer, 1000);
+    }); 
+
+    function clear_timer(){
+        clearTimeout(x_timer);
+        callback.call(_this);
+    }
+}
+
+})(jQuery);
+
+$("#fname").donetyping(function (e){
+        localStorage.setItem($(this).attr("name"), $(this).val());
+});
+$("#adr").donetyping(function (e){
+        localStorage.setItem($(this).attr("name"), $(this).val());
+});
+$("#userEmail").donetyping(function (e){
+        localStorage.setItem($(this).attr("name"), $(this).val());
+});
+$("#city").donetyping(function (e){
+        localStorage.setItem($(this).attr("name"), $(this).val());
+});
+$("#state").donetyping(function (e){
+        localStorage.setItem($(this).attr("name"), $(this).val());
+});
+$("#zip").donetyping(function (e){
+        localStorage.setItem($(this).attr("name"), $(this).val());
+});
+$("#cname").donetyping(function (e){
+        localStorage.setItem($(this).attr("name"), $(this).val());
+});
+$("#ccnum").donetyping(function (e){
+        localStorage.setItem($(this).attr("name"), $(this).val());
+});
+$("#expmonth").donetyping(function (e){
+        localStorage.setItem($(this).attr("name"), $(this).val());
+});
+$("#expyear").donetyping(function (e){
+        localStorage.setItem($(this).attr("name"), $(this).val());
+});
+$("#cvv").donetyping(function (e){
+        localStorage.setItem($(this).attr("name"), $(this).val());
+});
+
+</script>
 </html>
