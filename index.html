@@ -16,7 +16,8 @@
 	<div id="nav" >
 			<div id="nav_wrapper">
 				<ul>
-					<li> <a href="men.html">Mens</a>
+					<li><a href="index.html"> Home </a> </li>
+					<li class="nav_col"> <a href="men.html">Mens </a>
 						<ul>
 							<li><a href="menbottoms.html"> Bottoms </a> </li>
 							<li><a href="menhoodiesSweatshirts.html"> Hoodies / Sweatshirts </a> </li> 
@@ -26,7 +27,7 @@
 							<li><a href="mentrainers.html"> Trainers </a> </li>
 						</ul>
 					</li>
-					<li> <a href="womens.html"> Womens </a>
+					<li class="nav_col"> <a href="womens.html"> Womens </a>
 						<ul>
 							<li> <a href="womenbottoms.html"> Bottoms </a> </li> 
 							<li> <a href="womenhoodiesSweatshirts.html"> Hoodies / Sweatshirts</a> </li>
@@ -35,6 +36,7 @@
 							<li> <a href="womentracksuits.html"> Tracksuits </a> </li>
 							<li> <a href="womentrainers.html"> Trainers </a> </li>
 						</ul>
+						<li><a href="Checkout.html">Checkout</a>
 					</li>
 					<li><button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button></li>
 				</ul>
@@ -77,7 +79,7 @@
 											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
 										</ul>
 									</div>
-									<a href="#" class="btn btn-primary">Add to Cart</a>
+									<button class="btn btn-primary" onclick="addToCart1()">Add to Cart</button>
 								</div>						
 							</div>
 						</div>
@@ -98,7 +100,7 @@
 											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
 										</ul>
 									</div>
-									<a href="#" class="btn btn-primary">Add to Cart</a>
+									<button class="btn btn-primary" onclick="addToCart2()">Add to Cart</button>
 								</div>						
 							</div>
 						</div>		
@@ -119,7 +121,7 @@
 											<li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
 										</ul>
 									</div>
-									<a href="#" class="btn btn-primary">Add to Cart</a>
+									<button class="btn btn-primary" onclick="addToCart3()">Add to Cart</button>
 								</div>						
 							</div>
 						</div>								
@@ -140,7 +142,7 @@
 											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
 										</ul>
 									</div>
-									<a href="#" class="btn btn-primary">Add to Cart</a>
+									<button class="btn btn-primary" onclick="addToCart4()">Add to Cart</button>
 								</div>						
 							</div>
 						</div>
@@ -165,7 +167,7 @@
 											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
 										</ul>
 									</div>
-									<a href="#" class="btn btn-primary">Add to Cart</a>
+									<button class="btn btn-primary" onclick="addToCart5()">Add to Cart</button>
 								</div>						
 							</div>
 						</div>
@@ -186,7 +188,7 @@
 											<li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
 										</ul>
 									</div>
-									<a href="#" class="btn btn-primary">Add to Cart</a>
+									<button class="btn btn-primary" onclick="addToCart6()">Add to Cart</button>
 								</div>						
 							</div>
 						</div>
@@ -207,7 +209,7 @@
 											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
 										</ul>
 									</div>
-									<a href="#" class="btn btn-primary">Add to Cart</a>
+									<button class="btn btn-primary" onclick="addToCart7()">Add to Cart</button>
 								</div>						
 							</div>
 						</div>
@@ -228,7 +230,7 @@
 											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
 										</ul>
 									</div>
-									<a href="#" class="btn btn-primary">Add to Cart</a>
+									<button class="btn btn-primary" onclick="addToCart8()">Add to Cart</button>
 								</div>						
 							</div>
 						</div>						
@@ -253,7 +255,7 @@
 											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
 										</ul>
 									</div>
-									<a href="#" class="btn btn-primary">Add to Cart</a>
+									<button class="btn btn-primary" onclick="addToCart9()">Add to Cart</button>
 								</div>						
 							</div>
 						</div>
@@ -274,7 +276,7 @@
 											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
 										</ul>
 									</div>
-									<a href="#" class="btn btn-primary">Add to Cart</a>
+									<button class="btn btn-primary" onclick="addToCart10()">Add to Cart</button>
 								</div>						
 							</div>
 						</div>
@@ -295,7 +297,7 @@
 											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
 										</ul>
 									</div>
-									<a href="#" class="btn btn-primary">Add to Cart</a>
+									<button class="btn btn-primary" onclick="addToCart11()">Add to Cart</button>
 								</div>						
 							</div>
 						</div>	
@@ -316,7 +318,7 @@
 											<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
 										</ul>
 									</div>
-									<a href="#" class="btn btn-primary">Add to Cart</a>
+									<button class="btn btn-primary" onclick="addToCart12()">Add to Cart</button>
 								</div>						
 							</div>
 						</div>
@@ -341,29 +343,29 @@
 		
 	<div id="id01" class="modal">
   
-  <form class="modal-content animate" action="/action_page.php">
+  <form class="modal-content animate" >
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
       <img src="images/main site/avatar.png" height="200px"  alt="Avatar" class="avatar">
     </div>
 
     <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" id="username" required>
 
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" id="password" required>
         
-      <button type="submit">Login</button>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
-    </div>
+    <button type="submit" onclick ="login()">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
 
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-      <span class="psw">Forgot <a href="#">password?</a></span>
-    </div><!--ends her-->	
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
 	
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -384,12 +386,105 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+//function to store user name and password
+//function to store user name and password
+	localStorage.setItem('username', 'Luqman')
+	localStorage.setItem('password', '1234')
+	
+
+    //function to sign in
+    function login() {
+ var givenUser =  document.getElementById("username").value;
+ var givenPass =  document.getElementById("password").value;
+
+ if (givenUser == localStorage.username && givenPass == localStorage.password)
+		alert("Hello " + givenUser);
+		else
+		alert("wrong username or password try again");
+}<!--login-->
 </script>
 <script type="text/javascript">
 var $ = jQuery.noConflict();
 $(document).ready(function() { 
   $('#myCarousel').carousel({ interval: 3500, cycle: true });
 }); </script>
+<script>
+function addToCart1(){
+		sessionStorage.tapoutBlackHoody = 1;
+	}
+function addToCart2(){
+		sessionStorage.adidasBlackWhite = 1;
+	}
+function addToCart3(){
+		sessionStorage.leeCooperButterfly = 1;
+	}
+function addToCart4(){
+		sessionStorage.nikeBlackWhite = 1;
+	}
+function addToCart5(){
+		sessionStorage.noFearBlack = 1;
+	}
+function addToCart6(){
+		sessionStorage.adidasWhiteBlueNavyTrack = 1;
+	}
+function addToCart7(){
+		sessionStorage.karrimorPurple = 1;
+	}
+function addToCart8(){
+		sessionStorage.tapoutBlue = 1;
+	}
+function addToCart9(){
+		sessionStorage.nikeAirMaxSilver = 1;
+	}
+function addToCart10(){
+		sessionStorage.tapoutWhiteTop = 1;
+	}
+function addToCart11(){
+		sessionStorage.nikeBlackPink = 1;
+	}	
+function addToCart12(){
+		sessionStorage.pumaFlower = 1;
+	}	
+	
+	
+//homepage
+		sessionStorage.tapoutBlackHoody = 0;
+		sessionStorage.adidasBlackWhite = 0;
+		sessionStorage.leeCooperButterfly = 0;
+		sessionStorage.nikeBlackWhite = 0;
+		sessionStorage.noFearBlack = 0;
+		sessionStorage.adidasWhiteBlueNavyTrack = 0;
+		sessionStorage.karrimorPurple = 0;
+		sessionStorage.tapoutBlue = 0;
+		sessionStorage.nikeAirMaxSilver = 0;
+		sessionStorage.tapoutWhiteTop = 0;
+		sessionStorage.nikeBlackPink = 0;
+		sessionStorage.pumaFlower = 0;
+//men jackets
+		sessionStorage.menJacketsQuantity =0;
+//men tracksuits		
+		sessionStorage.menTrackSuitsQuantity =0;
+//men trainers
+		sessionStorage.menTrainersQuantity =0;
+//men shirts		
+		sessionStorage.menShirtsQuantity=0;
+//men bottoms	
+		sessionStorage.menBottomsQuantity=0;
+//men hoodies	
+		sessionStorage.menHoodiesQuantity=0;				
+//women bottoms		
+		sessionStorage.womenBottomsQuantity =0;
+//women hoodies		
+		sessionStorage.womenHoddiesQuantity =0;
+//women jackets		
+		sessionStorage.womenJacketsQuantity =0;		
+//women tracksuits		
+		sessionStorage.womenTracksuitsQuantity =0;
+//women trainers		
+		sessionStorage.womenTrainersQuantity =0;
+//women shirts		
+		sessionStorage.womenShirtsQuantity =0;		
+</script>
 </body>
 <style>
 .head {
@@ -415,7 +510,7 @@ float:left;
 }
 
 .dropdown .dropbtn {
-    font-size: 16px;    
+    font-size: 16px;
     border: none;
     outline: none;
     padding: 14px 16px;
@@ -462,7 +557,7 @@ input[type=text], input[type=password] {
 
 /* Set a style for all buttons */
 button {
-    background-color: #4CAF50;
+    background-color: #4286f4;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -583,7 +678,7 @@ h2 {
 	margin: 30px 0 80px;
 }
 h2 b {
-	color: #ffc000;
+	color: green;
 }
 h2::after {
 	content: "";
@@ -714,6 +809,7 @@ h2::after {
 	font-size: 14px;
 	color: #ffc000;
 }
+
 </style>
 
 </html>
